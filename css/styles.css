@@ -21,8 +21,7 @@ ul {
 
 img {
     display: block;
-    width: 100%;
-    height: auto;
+    
 }
 
 .container {
@@ -356,9 +355,7 @@ img {
 .overlay {
     padding: 8px;
     background-color: #4d5ae5;
-    ;
     color: #f4f4fd;
-    ;
     position: absolute;
     top: 0;
     left: 0;
