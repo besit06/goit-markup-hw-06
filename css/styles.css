@@ -38,7 +38,7 @@ img {
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
     height: 56px;
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
 
 .logo {
@@ -50,20 +50,146 @@ img {
     text-align: left;
     text-transform: uppercase;
     color: #4d5ae5;
-    /* margin-right: 76px; */
+    
 }
 
 .web {
     color: #2e2f42;
 }
 
+.menu-open-btn {
+    background-color: transparent;
+    
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    display: flex;
+    
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .header-mob-icon {
-   margin-left: auto;
+    
     
 }
 
-.header-nav-container {
-    /* display: flex; */
+.mob-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    padding: 24px 24px 40px 16px;
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+   
+}
+
+.mob-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-close-btn {
+    display: block;
+    margin-left: auto;
+    border: 1px solid #E7E9FC;
+    border-radius: 50%;
+    background-color: transparent;
+    margin-bottom: 24px;
+}   
+
+.menu-close-btn:hover,
+.menu-close-btn:focus {
+    background-color: #404BBF;
+    fill: #FFFFFF;
+   
+   }
+
+.menu-close-icon {}
+
+.mob-menu-list {
+   
+}
+
+.mob-menu-nav-item {
+    
+}
+
+.mob-menu-nav-menu-link {
+    
+        font-family: Roboto;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: #2E2F42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+}
+
+.mob-menu-nav-menu-link:hover,
+.mob-menu-nav-menu-link:focus {
+    color: #404BBF;
+}
+
+.mob-menu-nav-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.mob-adress-list {
+    
+}
+
+.mob-adress-item {
+        color: #434455;
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-bottom: 48px;
+}
+
+
+
+.mob-adress-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+
+.mob-adress-link {
+    color: #434455;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-adress-link:hover,
+.mob-adress-link:focus {
+    color: #404bbf;
+}
+
+.mob-icon-list {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.mob-icon-item {
+    width: 40px;
+    height: 40px;
 }
 
 .nav {
@@ -71,11 +197,11 @@ img {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    text-align: center;
+    text-align: left;
     display: flex;
-    margin: 0 auto;
+    margin-right: auto;
     align-items: center;
-    justify-content: center;
+    
     
 
 }
@@ -616,21 +742,15 @@ a {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-
 .close-button:hover,
 .close-button:focus {
     background-color: #404BBF;
     border: none;
+    fill: #FFFFFF;
 }
 
 .close-icon-item {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.close-button:hover,
-.close-button:focus {
-    fill: #FFFFFF;
 }
 
 .close-button {
@@ -648,8 +768,6 @@ a {
     padding: 0;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-
 }
 
 .form-modal {
@@ -885,11 +1003,15 @@ a {
 
 .header-nav-container {
      display: flex; 
-    justify-content: space-between;
+    
 }
 
 .header {
     height: 72px;
+}
+
+.logo {
+    margin-right: 76px;
 }
 
 .header-mob-icon {
@@ -897,15 +1019,26 @@ a {
 }
 
 .nav {
+    
     justify-content: space-between;
 }
 
 .nav-list {
     display: flex;
+    
+    
 }
 
 .adress-list {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.adress-item {
+    
 }
 
 .title {
@@ -1010,6 +1143,13 @@ width: calc((100% - 24px) / 2);
 .container {
         min-width: 1158px;
     }
+
+        .adress-list {
+            display: flex;
+            flex-direction: row;
+            
+            gap: 40px;
+        }
 
         .title {
             font-size: 56px;
